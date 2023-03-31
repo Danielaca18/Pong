@@ -7,7 +7,7 @@
 
 class GameView {
 public:
-    GameView(SDL_Renderer* renderer);
+    explicit GameView(SDL_Renderer* renderer);
     void render(const GameState& gameState);
 private:
     SDL_Renderer* m_renderer;
