@@ -4,3 +4,5 @@
 /.idea/C++ Pong.iml
 /.idea/misc.xml
 /.idea/modules.xml
+/cmake-build-debug-visual-studio/
+/cmake-build-debug-coverage/
