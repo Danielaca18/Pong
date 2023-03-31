@@ -5,18 +5,20 @@
 #include <ostream>
 #include <math.h>
 #include <vector>
-#include <time.h>
 #include "GameState.h"
 #include "GameView.h"
 
 class GameController {
 public:
-    GameController(GameState& gameState, GameView& gameView);
+    explicit GameController(GameState& gameState);
     void handleInput(SDL_Keycode keycode, bool down);
     void paddleCollision(int collision);
-    int checkCollision();
+    void resetGame();
+    void resetPaddles();
+    void resetBall(int dir);
+    void checkCollision();
     void update();
+    int checkWin() const;
 private:
     GameState& m_gameState;
-    GameView& m_gameView;
 };

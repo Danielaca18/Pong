@@ -15,4 +15,5 @@ struct GameState {
     float player1YDir;
     float player2YDir;
     bool play;
+    int winner;
 };

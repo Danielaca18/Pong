@@ -7,8 +7,17 @@
 
 class GameView {
 public:
-    GameView(SDL_Renderer* renderer);
+    explicit GameView(SDL_Renderer* renderer);
     void render(const GameState& gameState);
+    ~GameView();
+
 private:
     SDL_Renderer* m_renderer;
+    TTF_Font* font{};
+    SDL_Surface* scoreP1{};
+    SDL_Surface* scoreP2{};
+    SDL_Surface* winner{};
+    SDL_Texture* p1ScoreText{};
+    SDL_Texture* p2ScoreText{};
+    SDL_Texture* winnerText{};
 };
