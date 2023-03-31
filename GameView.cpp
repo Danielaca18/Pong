@@ -16,23 +16,23 @@ void GameView::render(const GameState& gameState) {
     SDL_RenderClear(m_renderer);
 
     // Initialize fonts for player score
-    //TTF_Font* font = TTF_OpenFont("Sans", 24);
+    TTF_Font* font = TTF_OpenFont("font/font.ttf", 24);
     SDL_Color textColor = {255, 255, 255};
 
-    /*
+
     // Render player scores
     SDL_Surface* scoreP1 = TTF_RenderText_Solid(font,
                                                 std::to_string(gameState.player1Score).c_str(), textColor);
     SDL_Surface* scoreP2 = TTF_RenderText_Solid(font,
-                                                std::to_string(gameState.player1Score).c_str(), textColor);
+                                                std::to_string(gameState.player2Score).c_str(), textColor);
 
     SDL_Texture* p1ScoreText = SDL_CreateTextureFromSurface(m_renderer, scoreP1);
     SDL_Texture* p2ScoreText = SDL_CreateTextureFromSurface(m_renderer, scoreP2);
-    SDL_Rect score1 = {0, 0, 0, 0};
-    SDL_Rect score2 = {0, 0, 0, 0};
+    SDL_Rect score1 = {100, 10, 40, 60};
+    SDL_Rect score2 = {520, 10, 40, 60};
     SDL_RenderCopy(m_renderer, p1ScoreText, nullptr, &score1);
     SDL_RenderCopy(m_renderer, p2ScoreText, nullptr, &score2);
-    */
+
     // Render player 1 paddle
     SDL_FRect player1Rect = { gameState.player1.x, gameState.player1.y, PADDLE_WIDTH, PADDLE_HEIGHT };
     SDL_SetRenderDrawColor(m_renderer, 255, 255, 255, 255);
