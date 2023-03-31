@@ -10,13 +10,17 @@ const int SCREEN_HEIGHT = 480;
 // SDL does not support overriding, so command line args must be redundantly included
 int main(int argv, char** args) {
     // Init sdl and sdl_ttf
-    SDL_Init(SDL_INIT_VIDEO);
-    TTF_Init();
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "SDL failed to initialize: %s", SDL_GetError());
+    }
+    if (TTF_Init()) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "SDL_ttf failed to initialize: %s", SDL_GetError());
+    }
 
     // Renders main window
     SDL_Window* window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     // Create instances of the Model, View, and Controller
     GameState gameState{};

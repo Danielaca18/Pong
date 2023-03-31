@@ -61,6 +61,7 @@ void GameController::handleInput(SDL_Keycode keycode, bool down) {
     // Pause/unpause game
     switch (keycode) {
         case SDLK_SPACE:
+            if (m_gameState.winner) m_gameState.winner = 0;
             m_gameState.play = true;
             break;
         case SDLK_p:
@@ -184,13 +185,8 @@ int GameController::checkWin() const {
  * Updates game state values each frame
  */
 void GameController::update() {
-    // Check for collision with paddle
+    // Check for ball collisions
     checkCollision();
-
-    // Check for collision of ball with top or bottom of screen
-    if (m_gameState.ball.y < 0 || m_gameState.ball.y + BALL_SIZE > SCREEN_HEIGHT) {
-        m_gameState.ballYDir *= -1;
-    }
 
     // Move ball
     if (m_gameState.play) {
