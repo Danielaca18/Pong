@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "GameController.h"
 #include "GameView.h"
 #include "GameState.h"
@@ -8,6 +9,8 @@ const int SCREEN_HEIGHT = 480;
 
 int main(int argv, char** args) {
     SDL_Init(SDL_INIT_VIDEO);
+
+    TTF_Init();
 
     SDL_Window* window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
@@ -45,6 +48,7 @@ int main(int argv, char** args) {
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    TTF_Quit();
     SDL_Quit();
 
     return 0;
