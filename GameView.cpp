@@ -6,7 +6,9 @@ const int BALL_SIZE = 10;
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-GameView::GameView(SDL_Renderer* renderer) : m_renderer(renderer) {}
+GameView::GameView(SDL_Renderer* renderer) : m_renderer(renderer) {
+    font = TTF_OpenFont("font/font.ttf", 24);
+}
 
 /**
  * Renders view objects to display
@@ -32,12 +34,9 @@ void GameView::render(const GameState& gameState) {
     SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
     SDL_RenderClear(m_renderer);
 
-    // Initialize fonts for player score
-    font = TTF_OpenFont("font/font.ttf", 24);
+    // Render player scores
     SDL_Color textColor = {255, 255, 255};
 
-
-    // Render player scores
     scoreP1 = TTF_RenderText_Solid(font,
                                                 std::to_string(gameState.player1Score).c_str(), textColor);
     scoreP2 = TTF_RenderText_Solid(font,
