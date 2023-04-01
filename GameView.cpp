@@ -7,7 +7,7 @@ const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
 GameView::GameView(SDL_Renderer* renderer) : m_renderer(renderer) {
-    font = TTF_OpenFont("font/font.ttf", 24);
+    font = TTF_OpenFont("assets/font.ttf", 24);
 }
 
 /**
