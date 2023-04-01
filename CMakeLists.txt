@@ -16,7 +16,7 @@ include_directories(${SDL2_INCLUDE_DIR}
                     ${SDL2_TTF_INCLUDE_DIR}
                     ${SDL2_IMAGE_INCLUDE_DIR})
 
-add_executable(C___Pong
+add_executable(Pong
     GameController.cpp
     GameController.h
     GameState.h
@@ -24,7 +24,7 @@ add_executable(C___Pong
     GameView.h
     main.cpp)
 
-target_link_libraries(C___Pong
+target_link_libraries(Pong
         ${SDL2_LIBRARY}
         ${SDL2_TTF_LIBRARIES}
         ${SDL2_IMAGE_LIBRARIES})
