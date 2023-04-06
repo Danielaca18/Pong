@@ -30,4 +30,4 @@ This is a classic Pong game implementation written in C++. It features a simple 
 - Down Arrow: Move paddle down
 
 ## License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
+This project is licensed under the GPL v3.0 License - see the `LICENSE` file for details.
