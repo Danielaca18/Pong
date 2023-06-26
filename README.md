@@ -12,6 +12,7 @@ This is a classic Pong game implementation written in C++. It features a simple 
 ## Prerequisites
 - MinGW
 - CMake (version 3.0 or higher)
+- Windows
 
 ## How to Compile and Run
 1. Clone this repository or download the source code as a ZIP file.
