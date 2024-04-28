@@ -15,13 +15,9 @@ const int MAX_ANGLE = 45;
  * @param gameView View of game
  */
 GameController::GameController(GameState& gameState):m_gameState(gameState) {
-    // Initialize paddle positions
+    // Game values
     resetPaddles();
-
-    // Initialize ball position
     resetBall(0);
-
-    // Initialize game values
     resetGame();
 
     // Start game paused
@@ -73,7 +69,7 @@ void GameController::handleInput(SDL_Keycode keycode, bool down) {
 }
 
 /**
- * Sets ball directions based on "bounce angle"
+ * Updates ball direction after collision
  * @param collision
  */
 void GameController::paddleCollision(int collision) {
@@ -132,8 +128,6 @@ void GameController::resetBall(int dir = 0) {
 
     // Set ball Y direction
     m_gameState.ballYDir = 0;
-
-    // Set ball X direction
     m_gameState.ballXDir = (!dir)?1:-1;
 }
 
@@ -169,7 +163,7 @@ void GameController::checkCollision() {
 
 /**
  * Checks if either player has won
- * @return integer representing winner of game
+ * @return int winner of game
  */
 int GameController::checkWin() const {
     if (m_gameState.player1Score > 9) {
@@ -196,15 +190,12 @@ void GameController::update() {
         m_gameState.ball.x += m_gameState.ballXDir / (float)(BALL_SPEED * 2);
     }
 
-    // Move player 1 paddle within boundaries
+    // Move player paddles
     if (m_gameState.player1YDir > 0 && ((m_gameState.player1.y + PADDLE_HEIGHT) < SCREEN_HEIGHT - 10)) {
         m_gameState.player1.y += m_gameState.player1YDir / ((float) PADDLE_SPEED * 2);
     } else if (m_gameState.player1YDir < 0 && ((m_gameState.player1.y - PADDLE_HEIGHT / (float) 2) > -18)) {
         m_gameState.player1.y += m_gameState.player1YDir / ((float) PADDLE_SPEED * 2);
-    }
-
-    // Move player 1 paddle within boundaries
-    if (m_gameState.player2YDir > 0 && ((m_gameState.player2.y + PADDLE_HEIGHT) < SCREEN_HEIGHT-10)) {
+    } if (m_gameState.player2YDir > 0 && ((m_gameState.player2.y + PADDLE_HEIGHT) < SCREEN_HEIGHT-10)) {
         m_gameState.player2.y += m_gameState.player2YDir / ((float)PADDLE_SPEED * 2);
     } else if (m_gameState.player2YDir < 0 && ((m_gameState.player2.y - PADDLE_HEIGHT/(double)2) > -18)) {
         m_gameState.player2.y += m_gameState.player2YDir / ((float)PADDLE_SPEED * 2);
@@ -212,35 +203,25 @@ void GameController::update() {
 
     // Check for goal
     if (m_gameState.ball.x < 0) {
-        // Add point to player 1 score
         ++m_gameState.player2Score;
-
-        // Reset ball position and direction
+        // Reset paddles and ball
         resetBall(1);
-
-        // Reset paddle positions
         resetPaddles();
-
         // Pause game
         m_gameState.play = false;
     } else if (m_gameState.ball.x + BALL_SIZE > SCREEN_WIDTH) {
-        // Add point to player 1 score
         ++m_gameState.player1Score;
-
-        // Reset ball position and direction
+        // Reset paddles and ball
         resetBall();
-
-        // Reset paddle positions
         resetPaddles();
-
         // Pause game
         m_gameState.play = false;
     }
 
     int winner = checkWin();
+    // Check if game is over
     if (winner) {
         m_gameState.winner = winner;
-
         m_gameState.player1Score = 0;
         m_gameState.player2Score = 0;
     }
