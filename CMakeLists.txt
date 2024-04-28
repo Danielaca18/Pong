@@ -13,6 +13,8 @@ add_executable(${PROJECT_NAME}
     src/GameState.h
     src/GameView.cpp
     src/GameView.h
+    src/font.cpp
+    src/font.h
     src/main.cpp)
 
 find_package(SDL2 CONFIG REQUIRED)
