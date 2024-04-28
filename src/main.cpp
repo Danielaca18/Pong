@@ -1,5 +1,6 @@
-#include <SDL.h>
-#include <SDL_ttf.h>
+#define SDL_MAIN_HANDLED
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "GameController.h"
 #include "GameView.h"
 #include "GameState.h"

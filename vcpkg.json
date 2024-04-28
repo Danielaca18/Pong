@@ -1,0 +1,7 @@
+{
+    "name": "pong",
+    "dependencies": [
+        "sdl2",
+        "sdl2-ttf"
+    ]
+}
