@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.24)
 project(Pong)
 
 set(CMAKE_CXX_STANDARD 14)
+set(ICONS "assets/image")
 
 add_executable(${PROJECT_NAME}
+    ${ICONS}/pong.rc
     src/GameController.cpp
     src/GameController.h
     src/GameState.h
