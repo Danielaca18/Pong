@@ -5,7 +5,7 @@ Classic Pong game written in C++. It features a simple and responsive interface,
 ![Pong Game Preview](assets/image/pong_preview.png)
 
 ## Technologies
-This project is built using several robust technologies:
+This project is built using several technologies:
 
 - **C++**: The primary programming language used for game logic and graphics rendering.
 - **MinGW/MSVC**: Windows compilers used to compile project.
