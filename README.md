@@ -11,6 +11,16 @@ Classic Pong game written in C++. It features a simple and responsive interface,
 - Ball speed increases after each successful hit
 - Pause and resume functionality
 
+## Technologies
+This project is built using several technologies:
+
+- **C++**: The primary programming language used for game logic and graphics rendering.
+- **MinGW/MSVC**: Windows compilers used to compile project.
+- **Vcpkg**: C++ library manager used to simplify external library implementation.
+- **CMake**: Used for automating the build process.
+- **SDL2**: A cross-platform development library designed to provide low-level access to graphics hardware. Used for rendering graphics and handling input in the game.
+- **Git**: Version control and source code management.
+
 ## Prerequisites
 - MinGW/MSVC
 - CMake (version 3.0 or higher)
