@@ -4,6 +4,7 @@
 #include <string>
 #include "SDL_surface.h"
 #include "GameState.h"
+#include "font.h"
 
 class GameView {
 public:

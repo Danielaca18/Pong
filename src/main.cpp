@@ -1,5 +1,6 @@
-#include <SDL.h>
-#include <SDL_ttf.h>
+#define SDL_MAIN_HANDLED
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "GameController.h"
 #include "GameView.h"
 #include "GameState.h"
@@ -12,9 +13,11 @@ int main(int argv, char** args) {
     // Init sdl and sdl_ttf
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "SDL failed to initialize: %s", SDL_GetError());
+        return 1;
     }
     if (TTF_Init()) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "SDL_ttf failed to initialize: %s", SDL_GetError());
+        return 1;
     }
 
     // Renders main window

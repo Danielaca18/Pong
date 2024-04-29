@@ -1,6 +1,8 @@
 # Pong written in C++
 
-This is a classic Pong game implementation written in C++. It features a simple and responsive interface, allowing two players to compete against each other.
+Classic Pong game written in C++. It features a simple and responsive interface, allowing two players to compete against each other.
+
+![Pong Game Preview](assets/image/pong_preview.png)
 
 ## Features
 - Two-player mode
@@ -10,25 +12,37 @@ This is a classic Pong game implementation written in C++. It features a simple 
 - Pause and resume functionality
 
 ## Prerequisites
-- MinGW
+- MinGW/MSVC
 - CMake (version 3.0 or higher)
 - Windows
 
-## How to Compile and Run
+## How to Run
+1. Download the latest release from the [releases page](https://github.com/Danielaca18/Pong/releases).
+2. Extract the contents of the ZIP file.
+3. Navigate to the extracted directory in your terminal or command prompt.
+4. Run the executable file `pong.exe`
+
+ ## Controls
+- General:
+    - Space: Resume game
+- Player 1:
+    - W: Mode paddle up
+    - S: Move paddle down
+- Player 2:
+    - Up Arrow: Move paddle up
+    - Down Arrow: Move paddle down
+
+## How to Compile and Debug
 1. Clone this repository or download the source code as a ZIP file.
 2. Navigate to the project directory in your terminal or command prompt.
-3. Create a build directory and navigate to it
-4. Run cmake to generate build files
-5. Compile the project
-6. Run the executable
+3. Run the following command:
+```bash
+build.bat debug
+```
+4. At this point, you should see a new directory called `build/debug` in the project directory, containing the generated project files.
+5. Open the generated project files in your preferred IDE (e.g., Visual Studio, Code::Blocks, etc.).
+6. Attach the debugger to the pong.exe and start debugging the application.
 
-## Controls
-- Player 1:
-- W: Mode paddle up
-- S: Move paddle down
-- Player 2:
-- Up Arrow: Move paddle up
-- Down Arrow: Move paddle down
 
 ## License
 This project is licensed under the GPL v3.0 License - see the `LICENSE` file for details.

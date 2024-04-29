@@ -7,7 +7,15 @@ const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
 GameView::GameView(SDL_Renderer* renderer) : m_renderer(renderer) {
-    font = TTF_OpenFont("font/font.ttf", 24);
+    // Load font byte array into buffer
+    SDL_RWops* rw = SDL_RWFromConstMem(font_array_ttf, font_array_ttf_len);
+    if (rw == nullptr) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "SDL failed to initialize: %s", SDL_GetError());
+    }
+
+    // Load font
+    font = TTF_OpenFontRW(rw, 1, 24);
+    // font = TTF_OpenFont("resources/font/font.ttf", 24);
 }
 
 /**
