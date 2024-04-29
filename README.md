@@ -4,6 +4,16 @@ Classic Pong game written in C++. It features a simple and responsive interface,
 
 ![Pong Game Preview](assets/image/pong_preview.png)
 
+## Technologies
+This project is built using several robust technologies:
+
+- **C++**: The primary programming language used for game logic and graphics rendering.
+- **MinGW/MSVC**: Windows compilers used to compile project.
+- **Vcpkg**: C++ library manager used to simplify external library implementation.
+- **CMake**: Used for automating the build process.
+- **SDL2**: A cross-platform development library designed to provide low-level access to graphics hardware. Used for rendering graphics and handling input in the game.
+- **Git**: Version control and source code management.
+
 ## Features
 - Two-player mode
 - Keyboard controls for both players
