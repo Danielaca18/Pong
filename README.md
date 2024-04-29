@@ -4,6 +4,13 @@ Classic Pong game written in C++. It features a simple and responsive interface,
 
 ![Pong Game Preview](assets/image/pong_preview.png)
 
+## Features
+- Two-player mode
+- Keyboard controls for both players
+- Scoring system
+- Ball speed increases after each successful hit
+- Pause and resume functionality
+
 ## Technologies
 This project is built using several technologies:
 
@@ -13,13 +20,6 @@ This project is built using several technologies:
 - **CMake**: Used for automating the build process.
 - **SDL2**: A cross-platform development library designed to provide low-level access to graphics hardware. Used for rendering graphics and handling input in the game.
 - **Git**: Version control and source code management.
-
-## Features
-- Two-player mode
-- Keyboard controls for both players
-- Scoring system
-- Ball speed increases after each successful hit
-- Pause and resume functionality
 
 ## Prerequisites
 - MinGW/MSVC
